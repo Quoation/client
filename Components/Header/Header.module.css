@@ -1,0 +1,41 @@
+.wrapper {
+  width: 100%;
+  margin-left: 5%;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-left: 8%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.logo span {
+  color: #fff;
+  margin-left: 10px;
+}
+
+/* .logo span span {
+  font-family: "Courier Prime", monospace;
+} */
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  padding-right: 3%;
+}
