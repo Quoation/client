@@ -28,7 +28,11 @@ const Header = (props) => {
                 `https://quotation-server.vercel.app/api/login/?name=${decoded.name}&email=${decoded.email}&profilepic=${decoded.picture}&username=${decoded.given_name}&password=${decoded.sub}`
               ).then((res) => {
                 res.json().then(async (data) => {
-                  await props.setUserData(data.data);
+                  if (data.type === "login") {
+                    await props.setUserData(data.data);
+                  } else {
+                    alert("You are Register now Please login");
+                  }
                 });
               });
             }}
