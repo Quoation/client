@@ -31,7 +31,7 @@ const Header = (props) => {
                   if (data.type === "login") {
                     await props.setUserData(data.data);
                   } else {
-                    alert("You are Register now Please login");
+                    alert("You are Register now Please login again");
                   }
                 });
               });
