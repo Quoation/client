@@ -26,6 +26,7 @@ const RandomQuote = (props) => {
     const randomquote = await fetchdata.json();
     setQuote(randomquote.data);
     setNewQuoteStatus("New Quote");
+    setIsCopied(false);
   };
 
   return (
