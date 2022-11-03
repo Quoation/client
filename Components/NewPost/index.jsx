@@ -17,7 +17,7 @@ const NewPost = (props) => {
     let fetchdata;
     try {
       fetchdata = await fetch(
-        `http://localhost:8080/api/newpost?quote=${Quote}&author=${Author}&email=${props.userdata.email}`
+        `https://quotation-server.vercel.app/api/newpost?quote=${Quote}&author=${Author}&email=${props.userdata.email}`
       );
     } catch (err) {
       console.log(err);
