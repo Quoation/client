@@ -7,10 +7,6 @@ import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { TiUser } from "react-icons/ti";
 
 const Navbar = (props) => {
-  useEffect(() => {
-    console.log(props.userdata);
-  }, [props.userdata]);
-
   return (
     <nav className={style.nav}>
       <div className={style.logo}>
