@@ -1,22 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Link from "next/link";
 import style from "./Navbar.module.css";
 import { ImQuotesLeft } from "react-icons/im";
 import { MdExplore } from "react-icons/md";
 import { IoIosAddCircle } from "react-icons/io";
-import { FiLogIn, FiLogOut } from "react-icons/fi";
+import { FiLogOut } from "react-icons/fi";
 import { TiUser } from "react-icons/ti";
+import { useRouter } from "next/router";
 
 const Navbar = (props) => {
+  const router = useRouter();
   return (
     <nav className={style.nav}>
       <div className={style.logo}>
         <ImQuotesLeft size="2.5rem" />
       </div>
       <div className={style.navLinks}>
-        <a href="/">
+        <Link href="/">
           <MdExplore size={"2rem"} />
           Explore
-        </a>
+        </Link>
         <a
           onClick={() => {
             if (props.userdata !== null) {
@@ -35,22 +38,29 @@ const Navbar = (props) => {
           <>
             {props.userdata.profilepic === "" ||
             props.userdata.profilepic === null ? (
-              <a>
+              <Link href={"/userprofile"}>
                 <TiUser size="2rem" />
                 <span>{props.userdata.name}</span>
-              </a>
+              </Link>
             ) : (
-              <a>
+              <Link href={"/userprofile"}>
                 <img
                   src={props.userdata.profilepic}
                   alt="profile"
                   className={style.profilepic}
                 />
                 <span>{props.userdata.name}</span>
-              </a>
+              </Link>
             )}
 
-            <a onClick={() => props.setUserData(null)}>
+            <a
+              onClick={() => {
+                if (router.pathname === "/userprofile") {
+                  router.push("/");
+                }
+                props.setUserData(null);
+              }}
+            >
               <FiLogOut size={"2rem"} />
               Logout
             </a>

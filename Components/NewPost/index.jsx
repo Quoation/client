@@ -17,13 +17,12 @@ const NewPost = (props) => {
     let fetchdata;
     try {
       fetchdata = await fetch(
-        `https://quotation-server.vercel.app/api/newpost?quote=${Quote}&author=${Author}`
+        `http://localhost:8080/api/newpost?quote=${Quote}&author=${Author}&email=${props.userdata.email}`
       );
     } catch (err) {
       console.log(err);
     }
     const res = await fetchdata.json();
-    console.log(res);
     if (res.data === true) {
       setQuote("");
       setAuthor("");
